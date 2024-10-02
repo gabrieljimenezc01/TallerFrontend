@@ -1,0 +1,23 @@
+<div class="row">
+  <div class="col-sm-12">
+    <form (ngSubmit)="onSubmit()" #mascotaForm="ngForm">
+      <fieldset class="form-group">
+        <div class="col-sm-12">
+          <label class="control-label" for="nombre">Nombre</label>
+          <input type="text" class="form-control" required [(ngModel)]="mascota.nombre" name="nombre">
+        </div>
+      </fieldset>
+      <fieldset class="form-group">
+        <div class="col-sm-12">
+          <label class="control-label" for="email">Edad</label>
+          <input type="email" class="form-control" required [(ngModel)]="mascota.edad" name="edad">
+        </div>
+      </fieldset>
+      <fieldset class="form-group">
+        <div class="col-sm-offset-2 col-sm-10">
+          <button type="submit" class="btn btn-primary" [disabled]="!mascotaForm.form.valid">Enviar</button>
+        </div>
+      </fieldset>
+    </form>
+  </div>
+</div>

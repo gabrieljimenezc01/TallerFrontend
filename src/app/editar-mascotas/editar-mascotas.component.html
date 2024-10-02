@@ -14,6 +14,43 @@
         </div>
       </fieldset>
       <fieldset class="form-group">
+        <div class="col-sm-12">
+          <label class="control-label" for="especie">especie</label>
+          <select class="form-control" required [(ngModel)]="mascota.especie" name="especie">
+            <option value="Perro">Perro</option>
+            <option value="Gato">Gato</option>
+            <option value="Otro">Otro</option>
+          </select>
+        </div>
+      </fieldset>
+      <fieldset class="form-group">
+        <div class="col-sm-12">
+          <label class="control-label" for="raza">raza</label>
+          <input type="text" class="form-control" required [(ngModel)]="mascota.raza" name="raza">
+        </div>
+      </fieldset>
+      <fieldset class="form-group">
+        <div class="col-sm-12">
+          <label class="control-label" for="descripcion">descripcion</label>
+          <input type="text" class="form-control" required [(ngModel)]="mascota.descripcion" name="descripcion">
+        </div>
+      </fieldset>
+      <fieldset class="form-group">
+        <div class="col-sm-12">
+          <label class="control-label" for="estado_adopcion">estado adopcion</label>
+          <select class="form-control" required [(ngModel)]="mascota.estado_adopcion" name="estado_adopcion">
+            <option value="Disponible">Disponible</option>
+            <option value="Adoptado">Adoptado</option>
+          </select>
+        </div>
+      </fieldset>
+      <fieldset class="form-group">
+        <div class="col-sm-12">
+          <label class="control-label" for="foto">foto url</label>
+          <input type="text" class="form-control" required [(ngModel)]="mascota.foto" name="foto">
+        </div>
+      </fieldset>
+      <fieldset class="form-group">
         <div class="col-sm-offset-2 col-sm-10">
           <button type="submit" class="btn btn-primary" [disabled]="!mascotaForm.form.valid">Enviar</button>
         </div>

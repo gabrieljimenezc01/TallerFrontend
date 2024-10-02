@@ -12,7 +12,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 export class EditarMascotasComponent implements OnInit{
 
   idMascota= '';
-  mascota=new MascotaModel('','','');
+  mascota=new MascotaModel('','','','','','','','');
   constructor(private mascotaService: MascotaService,private route: ActivatedRoute,private router: Router){
   }
 
@@ -46,6 +46,7 @@ export class EditarMascotasComponent implements OnInit{
     console.log("On Submit");
     //Viene de Editar
     if(this.mascota.id){
+      console.log(this.mascota.id)
       this.mascotaService.actualizarMascota(this.mascota).subscribe({
         next: data=>{
           console.log(data);

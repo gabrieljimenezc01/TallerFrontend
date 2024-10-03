@@ -7,7 +7,7 @@
           <a class="btn btn-primary" [routerLink]="['/mascotas/agregar']">Nueva Mascota</a>
         </fieldset>
       </form>
-      <br>
+      <!--<br>
       <table class="table table-striped">
         <thead>
           <tr class="row">
@@ -34,7 +34,33 @@
             </td>
           </tr>
         </tbody>
-      </table>
+      </table> -->
+      
+      <div class="card mb-3" style="max-width: 940px;" *ngFor="let mascota of mascotas | async" >
+        <div class="row g-0">
+          <div class="col-md-4">
+            <img src="{{mascota.foto}}" class="img-fluid rounded-start">
+          </div>
+          <div class="col-md-8">
+            <div class="card-body">
+              <h5 class="card-title">Hola, Soy {{mascota.nombre}}</h5>
+              <label class="card-text">Tengo {{mascota.edad}} años de edad, soy un hermoso {{mascota.especie}}</label>
+              <label class="card-text">Mi raza es: {{mascota.raza}}  </label>
+              <br>
+              <label class="card-text"> Algo sobre mi: {{mascota.descripcion}}</label>
+              <p class="card-text"><small class="text-body-secondary">{{mascota.estado_adopcion}}</small></p>
+              <div class="row">
+                <div class="col">
+                </div>
+                <div class="col-md offset">
+                  <a class="btn btn-info" [routerLink]="['/mascotas/editar/', mascota.id]">Editar</a>
+                  <a class="btn btn-danger" (click)="borrarMascota(mascota.id)">Borrar</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div> 
     </div>
   </div>
 </div>

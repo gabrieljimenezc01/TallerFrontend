@@ -1,6 +1,46 @@
-<p>vista-mascota works!</p>
-<div class="row">
-    <div class="col-sm-12">
-        <input type="text" class="form-control" required [(ngModel)]="mascota.nombre" name="nombre">
+<div class="container text-center">
+  <div class="row">
+    <div class="col-4">
+      <div class="card" style="width: 18rem;">
+        <img src="{{mascota.foto}}" class="card-img-top" alt="foto de perfil">
+        <div class="card-body">
+          <h5 class="card-title" name="name">{{mascota.nombre}}</h5>
+          <a class="bi bi-pencil-square" [routerLink]="['/mascotas/editar/', mascota.id]"></a>
+        </div>
+      </div>
     </div>
+    <div class="col-8">
+      <div>
+        <ul class="list-group list-group-flush text-start">
+          <li class="list-group-item">
+            <h5>Sobre mí</h5>
+          </li>
+          <li class="list-group-item"><b>Edad: </b> {{mascota.edad}}.</li>
+          <li class="list-group-item"><b>Especie: </b> {{mascota.especie}}.</li>
+          <li class="list-group-item"><b>Raza:</b> {{mascota.raza}}.</li>
+          <li class="list-group-item"><b>Sexo:</b> {{mascota.sexo}}.</li>
+          <li class="list-group-item"><b>Estado:</b> {{mascota.estado_adopcion}}.</li>
+          <li class="list-group-item"><b>Descripción:</b> {{mascota.descripcion}}.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+<br>
+<div class="container col-sm-12 text-center" style="padding-bottom: 5rem ;">
+  <div class="card text-bg-info ">
+    <div class="card-header">Adopción</div>
+    <div class="card-body">
+      <h5 class="card-title">Hola!</h5>
+      <p class="card-text">Si has tomado la decisión de adoptarme, <br> visita el siguiente enlace donde encontrarás los
+        requisitos,<br> el proceso de adopción y el formulario para postularte.</p>
+      <div>
+        <a class="bi bi-hearts fs-2 text-success" [routerLink]="['/mascotas/editar/', mascota.id]">ADOPTAR</a>
+      </div>
+      <br>
+      <div>
+        <a class="bi bi-house-heart-fill fs-2 text-danger" [routerLink]="['/mascotas']">VOLVER</a>
+      </div>
+    </div>
+  </div>
 </div>

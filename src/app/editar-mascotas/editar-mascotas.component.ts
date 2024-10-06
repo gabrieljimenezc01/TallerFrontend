@@ -12,7 +12,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 export class EditarMascotasComponent implements OnInit{
 
   idMascota= '';
-  mascota=new MascotaModel('','','','','','','','');
+  mascota=new MascotaModel('','','','','','','','','');
   constructor(private mascotaService: MascotaService,private route: ActivatedRoute,private router: Router){
   }
 
@@ -50,7 +50,7 @@ export class EditarMascotasComponent implements OnInit{
       this.mascotaService.actualizarMascota(this.mascota).subscribe({
         next: data=>{
           console.log(data);
-          this.router.navigate(['/mascotas']);
+          this.router.navigate([`/mascotas/vista/${this.mascota.id}`]);
 
         },
         error: err=>{

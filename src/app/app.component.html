@@ -1,18 +1,17 @@
-<div class="container">
-  <h3>Bienevenido a Patitas Adopcion</h3>
-  <nav class="navbar navbar-expand-lg " style="background-color: #7ac5ff;">
+<div class="" >
+  <nav class="navbar navbar-expand-lg " style="background-color: #7ac5ff; width: 100%;">
+    <h3 class="text-center" href="#" style="background-color: #7ac5ff;">Patitas Adopción</h3>
     <div class="container-fluid">
       <a class="navbar-brand" href="#">
-        <img src="https://cdn-icons-png.flaticon.com/512/4213/4213623.png" alt="Logo" width="30" height="24" class="d-inline-block align-text-top">
-        Patitas
+        <img src="https://cdn-icons-png.flaticon.com/512/4213/4213623.png" alt="Logo" width="50" height="54" class="d-inline-block align-text-top">
       </a>
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav">
           <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="#">Home</a>
+            <a class="nav-link active" aria-current="page" [routerLink]="['/mascotas']">Peluditos</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Features</a>
+            <a class="nav-link active" [routerLink]="['/adoptantes']">Adoptantes</a>
           </li>
         </ul>
       </div>

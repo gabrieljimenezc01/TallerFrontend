@@ -9,13 +9,17 @@ import { MascotaService } from './shared/mascota.service';
 import { provideHttpClient } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { VistaMascotaComponent } from './vista-mascota/vista-mascota.component';
+import { ListaAdoptantesComponent } from './lista-adoptantes/lista-adoptantes.component';
+import { EditarAdoptantesComponent } from './editar-adoptantes/editar-adoptantes.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ListaMascotasComponent,
     EditarMascotasComponent,
-    VistaMascotaComponent
+    VistaMascotaComponent,
+    ListaAdoptantesComponent,
+    EditarAdoptantesComponent
   ],
   imports: [
     BrowserModule,

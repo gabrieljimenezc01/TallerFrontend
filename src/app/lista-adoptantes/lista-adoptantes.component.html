@@ -1,0 +1,44 @@
+<div class="container">
+    <div class="row">
+        <div class="col-sm-12">
+
+            <br>
+            <table class="table table-striped">
+                <thead>
+                    <tr class="row">
+                        <th class="col-sm-1"> FOTO </th>
+                        <th class="col-sm-3"> NOMBRE </th>
+                        <th class="col-sm-2"> TELEFONO </th>
+                        <th class="col-sm-3"> EMAIL </th>
+                        <th class="col-sm-1"> SEXO </th>
+                        <th class="col-sm-2"> ACCIONES</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let adoptante of adoptantes | async" class="row">
+                        <td class="col-sm-1"><img src="{{adoptante.foto}}" class="img-thumbnail" style="max-width: 100px; max-height: 90px; object-fit: cover;"></td>
+                        <td class="col-sm-3"><i>{{ adoptante.nombre }}</i></td>
+                        <td class="col-sm-2"><i>{{ adoptante.telefono }}</i></td>
+                        <td class="col-sm-3"><i>{{ adoptante.email }}</i></td>
+                        <td class="col-sm-1"><i>{{ adoptante.sexo }}</i></td>                        
+                        <td class="col-sm-1">
+                            <fieldset class="form-group col-sm-1">
+                                <a class="btn btn-info" [routerLink]="['/adoptantes/editar/', adoptante.id]">Editar</a>
+                            </fieldset>
+                        </td>
+                        <td class="col-sm-1">
+                            <fieldset class="form-group col-sm-1">
+                                <a class="btn btn-danger" (click)="borrarAdoptante(adoptante.id)">Borrar</a>
+                            </fieldset>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <form class="form-inline">
+                <fieldset class="form-group col-sm-1">
+                  <a class="btn btn-primary" [routerLink]="['/adoptantes/agregar']">Nuevo Adoptante</a>
+                </fieldset>
+              </form>
+        </div>
+    </div>
+</div>

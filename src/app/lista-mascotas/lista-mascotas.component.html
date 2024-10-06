@@ -1,12 +1,7 @@
 <div class="container">
   <div class="row">
     <div class="col-sm-12">
-      <form class="form-inline">
-        <fieldset class="form-group col-sm-11"></fieldset>
-        <fieldset class="form-group col-sm-1">
-          <a class="btn btn-primary" [routerLink]="['/mascotas/agregar']">Nueva Mascota</a>
-        </fieldset>
-      </form>
+      
       <!--<br>
       <table class="table table-striped">
         <thead>
@@ -36,31 +31,32 @@
         </tbody>
       </table> -->
       
-      <div class="card mb-3" style="max-width: 940px;" *ngFor="let mascota of mascotas | async" >
+      <div class="card mb-3" style="max-height: 450px;" *ngFor="let mascota of mascotas | async" >
         <div class="row g-0">
-          <div class="col-md-4">
-            <img src="{{mascota.foto}}" class="img-fluid rounded-start">
+          <div class="col-md-4"  >
+            <img src="{{mascota.foto}}" class="img-fluid rounded-start" style="max-height: 220px; width: 100%; object-fit: cover;">
           </div>
           <div class="col-md-8">
             <div class="card-body">
-              <h5 class="card-title">Hola, Soy {{mascota.nombre}}</h5>
-              <label class="card-text">Tengo {{mascota.edad}} años de edad, soy un hermoso {{mascota.especie}}</label>
-              <label class="card-text">Mi raza es: {{mascota.raza}}  </label>
-              <br>
-              <label class="card-text"> Algo sobre mi: {{mascota.descripcion}}</label>
-              <p class="card-text"><small class="text-body-secondary">{{mascota.estado_adopcion}}</small></p>
+              <h5 class="card-title">Hola, Soy {{mascota.nombre}} </h5>
+              <p class="card-text">Tengo {{mascota.edad}} años de edad.  </p>
+              <p class="card-text"><small class="text-body-secondary">{{mascota.estado_adopcion}} </small></p>
               <div class="row">
                 <div class="col">
-                </div>
-                <div class="col-md offset">
-                  <a class="btn btn-info" [routerLink]="['/mascotas/editar/', mascota.id]">Editar</a>
-                  <a class="btn btn-danger" (click)="borrarMascota(mascota.id)">Borrar</a>
+                  <a class="btn btn-info" [routerLink]="['/mascotas/vista/', mascota.id]">Ver más</a>
+                  <!--<a class="btn btn-info" [routerLink]="['/mascotas/editar/', mascota.id]">Editar</a> -->
+                  <!--<a class="btn btn-danger" (click)="borrarMascota(mascota.id)">Borrar</a> -->
                 </div>
               </div>
             </div>
           </div>
         </div>
       </div> 
+      <form class="form-inline">
+        <fieldset class="form-group col-sm-1">
+          <a class="btn btn-primary" [routerLink]="['/mascotas/agregar']">Nueva Mascota</a>
+        </fieldset>
+      </form>
     </div>
   </div>
 </div>

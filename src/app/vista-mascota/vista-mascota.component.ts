@@ -12,7 +12,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 export class VistaMascotaComponent implements OnInit{
 
   idMascota= '';
-  mascota=new MascotaModel('','','','','','','','');
+  mascota=new MascotaModel('','','','','','','','','');
   constructor(private mascotaService: MascotaService,private route: ActivatedRoute,private router: Router){
   }
 
@@ -20,7 +20,20 @@ export class VistaMascotaComponent implements OnInit{
     this.idMascota=this.route.snapshot.params['idMascota'];
     console.log(`El idMascota es ${this.idMascota}`);
 
-     
+     if(this.idMascota){
+      //viene de ver mascota
+        this.mascotaService.obtenerMascota(this.idMascota).subscribe({
+        next: data=>{
+          console.log(data);
+          this.mascota=data;
+          console.log(this.mascota);
+        },
+        error: err=>{
+          console.log(`Error ${err}`);
+        }
+
+      });
+
      }
 
   }

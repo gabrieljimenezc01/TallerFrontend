@@ -1,0 +1,41 @@
+<div class="container">
+    <div class="row">
+        <div class="col-sm-12">
+            <br>
+            <table class="table table-striped">
+                <thead>
+                    <tr class="row">
+                        <th class="col-sm-1"> ID </th>
+                        <th class="col-sm-3"> ID_ADOPTANTE </th>
+                        <th class="col-sm-3"> ID_MASCOTA </th>
+                        <th class="col-sm-3"> ESTADO </th>
+                        <th class="col-sm-2"> ACCIONES</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let solicitud of solicitudes | async" class="row">
+                        <td class="col-sm-1"><i>{{ solicitud.id }}</i></td>
+                        <td class="col-sm-3"><i>{{ solicitud.adoptantes_id }} </i></td>
+                        <td class="col-sm-3"><i>{{ solicitud.mascotas_id }}</i></td>
+                        <td class="col-sm-3"><i>{{ solicitud.estado }}</i></td>                        
+                        <td class="col-sm-1">
+                            <fieldset class="form-group col-sm-1">
+                                <a class="btn btn-info" [routerLink]="['/solicitudes/editar/', solicitud.id]">Editar</a>
+                            </fieldset>
+                        </td>
+                        <td class="col-sm-1">
+                            <fieldset class="form-group col-sm-1">
+                                <a class="btn btn-danger" (click)="borrarSolicitud(solicitud.id)">Borrar</a>
+                            </fieldset>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <form class="form-inline">
+                <fieldset class="form-group col-sm-1">
+                  <a class="btn btn-primary" [routerLink]="['/solicitudes/agregar']">Nueva Solictud</a>
+                </fieldset>
+              </form>
+        </div>
+    </div>
+</div>

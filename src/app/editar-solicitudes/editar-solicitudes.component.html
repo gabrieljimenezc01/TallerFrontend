@@ -1,0 +1,41 @@
+<div class="container">
+
+    <div class="row">
+      <div class="col-sm-12">
+        <form (ngSubmit)="onSubmit()" #solicitudForm="ngForm">
+          <fieldset class="form-group">
+            <div class="col-sm-12">
+              <label class="control-label" for="mascota">Mascota</label>
+              <select class="form-control" required [(ngModel)]="solicitud.mascotas_id" name="mascotas_id">
+                <option *ngFor="let mascota of mascotas | async" value="{{mascota.id}}">{{mascota.nombre}}</option>
+              </select>
+            </div>
+          </fieldset>
+          <fieldset class="form-group">
+            <div class="col-sm-12">
+              <label class="control-label" for="adoptantes">adoptantes</label>
+              <select class="form-control" required [(ngModel)]="solicitud.adoptantes_id" name="adoptantes_id">
+                <option *ngFor="let adoptante of adoptantes | async" value="{{adoptante.id}}">{{adoptante.nombre}}</option>
+              </select>
+            </div>
+          </fieldset>
+          <fieldset class="form-group">
+            <div class="col-sm-12">
+              <label class="control-label" for="estado">estado</label>
+              <select class="form-control" required  [(ngModel)]="solicitud.estado" name="estado">
+                <option value="Pendiente">Pendiente</option>
+                <option value="Aprobada">Aprobada</option>
+                <option value="Rechazada">Rechazada</option>
+              </select>
+            </div>
+          </fieldset>          
+          <fieldset class="form-group">
+            <div class="col-sm-offset-2 col-sm-10">
+              <button type="submit" class="btn btn-primary" [disabled]="!solicitudForm.form.valid">Enviar</button>
+            </div>
+          </fieldset>
+          
+        </form>
+      </div>
+    </div>
+  </div>

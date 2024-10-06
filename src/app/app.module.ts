@@ -11,6 +11,7 @@ import { FormsModule } from '@angular/forms';
 import { VistaMascotaComponent } from './vista-mascota/vista-mascota.component';
 import { ListaAdoptantesComponent } from './lista-adoptantes/lista-adoptantes.component';
 import { EditarAdoptantesComponent } from './editar-adoptantes/editar-adoptantes.component';
+import { BienvenidaComponent } from './bienvenida/bienvenida.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { EditarAdoptantesComponent } from './editar-adoptantes/editar-adoptantes
     EditarMascotasComponent,
     VistaMascotaComponent,
     ListaAdoptantesComponent,
-    EditarAdoptantesComponent
+    EditarAdoptantesComponent,
+    BienvenidaComponent
   ],
   imports: [
     BrowserModule,

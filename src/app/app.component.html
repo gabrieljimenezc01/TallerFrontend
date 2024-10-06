@@ -1,12 +1,13 @@
 <div class="" >
-  <nav class="navbar navbar-expand-lg " style="background-color: #7ac5ff; width: 100%;">
-    <h3 class="text-center" href="#" style="background-color: #7ac5ff;">Patitas Adopción</h3>
-    <div class="container-fluid">
-      <a class="navbar-brand" href="#">
-        <img src="https://cdn-icons-png.flaticon.com/512/4213/4213623.png" alt="Logo" width="50" height="54" class="d-inline-block align-text-top">
+  <nav class="navbar navbar-expand-lg " style="background-color: #7ac5ff; width: 100%; margin-bottom: 0;">
+    
+    <div class="container-fluid ">
+      <a class="navbar-brand " href="#">
+        <img src="https://cdn-icons-png.flaticon.com/512/4213/4213623.png" alt="Logo" width="40" height="44" class=" align-text-center">
+        PATITAS
       </a>
       <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
           <li class="nav-item">
             <a class="nav-link active" aria-current="page" [routerLink]="['/mascotas']">Peluditos</a>
           </li>
@@ -14,9 +15,22 @@
             <a class="nav-link active" [routerLink]="['/adoptantes']">Adoptantes</a>
           </li>
         </ul>
+        <ul class="navbar-nav mb-2 mb-lg-0">
+          <li class="nav-item mx-2">
+            <i href="" class="bi text-warning bi-instagram"></i>
+          </li>
+          <li class="nav-item mx-2">
+            <i href="" class="bi text-primary bi-facebook"></i>
+          </li>
+          <li class="nav-item mx-2">
+            <i href="" class="bi text-danger bi-google"></i>
+          </li>
+          <li class="nav-item mx-2">
+            <i href="" class="bi text-success bi-whatsapp"></i>
+          </li>
+        </ul>
       </div>
     </div>
   </nav>
-  <br>
-  <router-outlet />
 </div>
+  <router-outlet />

@@ -5,8 +5,10 @@ import { EditarMascotasComponent } from './editar-mascotas/editar-mascotas.compo
 import { VistaMascotaComponent } from './vista-mascota/vista-mascota.component';
 import { ListaAdoptantesComponent } from './lista-adoptantes/lista-adoptantes.component';
 import { EditarAdoptantesComponent } from './editar-adoptantes/editar-adoptantes.component';
+import { BienvenidaComponent } from './bienvenida/bienvenida.component';
 
 const routes: Routes = [
+ {path: 'home', component: BienvenidaComponent},
  {path: 'mascotas', component: ListaMascotasComponent},
  {path: 'mascotas/editar/:idMascota', component: EditarMascotasComponent},
  {path: 'mascotas/agregar',component: EditarMascotasComponent},
@@ -14,7 +16,7 @@ const routes: Routes = [
  {path: 'adoptantes',component: ListaAdoptantesComponent},
  {path: 'adoptantes/agregar',component: EditarAdoptantesComponent},
  {path: 'adoptantes/editar/:idAdoptante', component: EditarAdoptantesComponent},
- {path: '**',redirectTo: '/mascotas',pathMatch:'full'}
+ {path: '**',redirectTo: '/home',pathMatch:'full'}
 ];
 
 @NgModule({
